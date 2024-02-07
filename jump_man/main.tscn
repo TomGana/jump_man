@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://w60r11i505ny"]
+
+[ext_resource type="PackedScene" uid="uid://ccr1mrrx1ffk" path="res://tile_map.tscn" id="1_uy6kw"]
+[ext_resource type="PackedScene" uid="uid://bxg3hnsqi6clv" path="res://character_body_2d.tscn" id="2_n8263"]
+
+[node name="Node" type="Node"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_uy6kw")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_n8263")]
+position = Vector2(429, 272)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
