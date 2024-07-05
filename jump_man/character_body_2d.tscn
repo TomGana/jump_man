@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxg3hnsqi6clv"]
+[gd_scene load_steps=10 format=3 uid="uid://bxg3hnsqi6clv"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_qdns3"]
 [ext_resource type="Texture2D" uid="uid://dkqhv0txapjah" path="res://assets/Items/weapons/sword002.png" id="3_wgd7b"]
@@ -7,8 +7,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5208u"]
 size = Vector2(23.75, 24.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pta4h"]
+size = Vector2(22, 23.5)
+
 [sub_resource type="Animation" id="Animation_un4ys"]
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -24,7 +26,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("sword:frame")
+tracks/1/path = NodePath("player/sword:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -36,7 +38,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("sword:position")
+tracks/2/path = NodePath("player/sword:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -48,7 +50,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("sword:rotation")
+tracks/3/path = NodePath("player/sword:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -56,6 +58,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [6.20316, 7.07146, 8.0163, 9.0363, 9.9338, 10.7615, 11.8246]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("player/sword/hitbox:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_42td3"]
@@ -75,7 +89,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("sword:position")
+tracks/1/path = NodePath("player/sword:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -87,7 +101,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("sword:rotation")
+tracks/2/path = NodePath("player/sword:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -96,10 +110,33 @@ tracks/2/keys = {
 "update": 0,
 "values": [12.5087]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("player/sword/hitbox:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("player/sword/hitbox/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_cqnxe"]
 resource_name = "attack"
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -115,7 +152,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("sword:position")
+tracks/1/path = NodePath("player/sword:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -127,7 +164,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("sword:rotation")
+tracks/2/path = NodePath("player/sword:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -135,6 +172,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [12.5087, 13.1225, 14.0874, 15.4359, 16.2509, 17.0445, 18.0513, 19.0429, 18.5107]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("player/sword/hitbox/CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1qcnb"]
@@ -145,11 +194,13 @@ _data = {
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-scale = Vector2(2, 2)
+scale = Vector2(1.5, 1.5)
 collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_qdns3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 3.75)
 shape = SubResource("RectangleShape2D_5208u")
 
@@ -159,16 +210,24 @@ shape = SubResource("RectangleShape2D_5208u")
 texture = ExtResource("5_wvtge")
 hframes = 11
 
-[node name="sword" type="Sprite2D" parent="Node2D"]
+[node name="sword" type="Sprite2D" parent="Node2D/player"]
 position = Vector2(17.5, 2)
 rotation = 12.5087
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("3_wgd7b")
 
+[node name="hitbox" type="Area2D" parent="Node2D/player/sword"]
+rotation = 0.0800255
+scale = Vector2(12.5, 12.5)
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/player/sword/hitbox"]
+shape = SubResource("RectangleShape2D_pta4h")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
 libraries = {
 "": SubResource("AnimationLibrary_1qcnb")
 }
-autoplay = "Idle"
 
 [connection signal="animation_finished" from="Node2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

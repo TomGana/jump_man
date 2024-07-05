@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var speed = 300.0
-var jump_speed = -600.0
+var jump_speed = -800.0
 
 # Get the gravity from the project settings so you can sync with rigid body nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -11,13 +11,27 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _physics_process(delta):
 	# Add the gravity.
 	velocity.y += gravity * delta
-	
+	#if velocity.x > 0:
+		#$Node2D/player.flip_h = false
+		#$Node2D/player/sword.flip_h = false
+#
+	#elif velocity.x < 0:
+		#
+		#$Node2D/player.flip_h = true
+		#$Node2D/player/sword.flip_h = true
+
+	if Input.is_action_just_pressed("move_left"):
+		$Node2D.scale.x = abs($Node2D.scale.x) * -1
+	if Input.is_action_just_pressed("move_right"):
+		$Node2D.scale.x = abs($Node2D.scale.x)
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_speed
 	if Input.is_action_just_pressed("hit"):
 		$Node2D/AnimationPlayer.play("attack")
-		
+
+	#if Input.is_action_just_pressed("hit"):
+		#$Node2D/AnimationPlayer.play("attack")
 		#$AnimatedSprite2D.play("jump")
 	#if Input.is_action_just_pressed("jump") and is_on_wall():
 		#velocity.y = jump_speed
@@ -53,5 +67,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 
+
 func _on_animation_player_animation_finished(anim_name):
-	$Node2D/AnimationPlayer.play("attack")
+	$Node2D/AnimationPlayer.play("Idle")
+
