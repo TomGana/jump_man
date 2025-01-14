@@ -1,15 +1,21 @@
 extends CharacterBody2D
-
+signal health_changed
 var speed = 300.0
 var jump_speed = -800.0
-
+var health = 100.0
 # Get the gravity from the project settings so you can sync with rigid body nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+var attack = 5
 #var jump_count = 0
 #var walljump = 0
+func _ready() -> void:
+	$HealthBar2D.initialize("health_changed", health)
+func take_player_damage(attack: Attack):
+	health -= attack.attack_damage
+	emit_signal("health_changed", health)
 func _physics_process(delta):
 	# Add the gravity.
+	
 	velocity.y += gravity * delta
 	#if velocity.x > 0:
 		#$Node2D/player.flip_h = false
@@ -71,3 +77,11 @@ func _physics_process(delta):
 func _on_animation_player_animation_finished(anim_name):
 	$Node2D/AnimationPlayer.play("Idle")
 
+
+
+
+
+
+
+func _on_health_bar_2d_value_changed(value):
+	emit_signal("health_changed", health)
