@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Godot Design Pattern demos"
+config/name="Jump Man"
+config/description="Where he goes...nobody knows."
 run/main_scene="res://finite_state_machine/demo_state_machine.tscn"
 config/features=PackedStringArray("4.4")
 config/icon="res://icon.png"
