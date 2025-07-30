@@ -1,0 +1,28 @@
+# Godot 4.x generated files
+.import/
+.godot/imports/
+
+# Optional editor settings – track if you want uniform dev environments
+# .godot/editor_settings-*
+
+# Build/export artifacts (if applicable)
+export/
+build/
+
+# System & editor trash
+*.tmp
+*.bak
+*.swp
+*.DS_Store
+Thumbs.db
+
+# IDE configs (add/remove depending on tooling)
+.vscode/
+.idea/
+
+# Logs, if any
+*.log
+*.pck
+*.exe
+*.apk
+*.zip
