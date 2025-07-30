@@ -7,6 +7,7 @@ const RUNNING = "Running"
 const JUMPING = "Jumping"
 const FALLING = "Falling"
 const GLIDING = "Gliding"
+const PRESS_BTN = "Press_Btn"
 
 var player: Player
 

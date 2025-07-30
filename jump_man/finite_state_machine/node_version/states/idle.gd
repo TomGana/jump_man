@@ -15,3 +15,5 @@ func physics_update(_delta: float) -> void:
 		finished.emit(JUMPING)
 	elif Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
 		finished.emit(RUNNING)
+	elif Input.is_action_pressed("press_btn"):
+		finished.emit(PRESS_BTN)

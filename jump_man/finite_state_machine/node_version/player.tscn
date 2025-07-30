@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c8yssrs2pdc7b"]
+[gd_scene load_steps=12 format=3 uid="uid://c8yssrs2pdc7b"]
 
 [ext_resource type="Script" uid="uid://b0hxb4kxrkqqe" path="res://finite_state_machine/node_version/player.gd" id="1"]
 [ext_resource type="Script" uid="uid://i0h28v5yp2u4" path="res://finite_state_machine/node_version/state_machine.gd" id="3"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cga60v1i3bbt8" path="res://common/player.png" id="7"]
 [ext_resource type="Script" uid="uid://dkwb544ahr0ht" path="res://finite_state_machine/node_version/states/falling.gd" id="7_w7y10"]
 [ext_resource type="Script" uid="uid://suf1qput7om" path="res://finite_state_machine/node_version/states/gliding.gd" id="8_mgbgb"]
+[ext_resource type="Script" uid="uid://dbb3t0v20ukwx" path="res://finite_state_machine/node_version/states/press_btn.gd" id="9_n2krs"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(80, 80)
@@ -41,6 +42,9 @@ script = ExtResource("7_w7y10")
 
 [node name="Gliding" type="Node" parent="StateMachine"]
 script = ExtResource("8_mgbgb")
+
+[node name="Press_Btn" type="Node" parent="StateMachine"]
+script = ExtResource("9_n2krs")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -39.0
