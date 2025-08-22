@@ -1,0 +1,64 @@
+[gd_scene load_steps=12 format=4 uid="uid://dsuc1wfiksnmn"]
+
+[ext_resource type="Texture2D" uid="uid://bapdilba6s68f" path="res://test_texture.png" id="1_sq12e"]
+[ext_resource type="Texture2D" uid="uid://cx78q1ull058f" path="res://common/tileset_platformer.png" id="2_02bc5"]
+[ext_resource type="FontFile" path="res://common/monserrate_bold.tres" id="3_c4mk1"]
+[ext_resource type="Texture2D" uid="uid://du1caumdpuqq8" path="res://spike.png" id="3_sq12e"]
+[ext_resource type="PackedScene" uid="uid://c8yssrs2pdc7b" path="res://finite_state_machine/node_version/player.tscn" id="4_vym5w"]
+[ext_resource type="PackedScene" uid="uid://5rphve1exuhk" path="res://finite_state_machine/new_guy_w_state.tscn" id="6_bhhoj"]
+[ext_resource type="PackedScene" uid="uid://b63laxmik1tr2" path="res://death_zone.tscn" id="7_sq12e"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0bmky"]
+texture = ExtResource("1_sq12e")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o8i5v"]
+texture = ExtResource("2_02bc5")
+texture_region_size = Vector2i(80, 80)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_02bc5"]
+texture = ExtResource("3_sq12e")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_5uyxs"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_0bmky")
+sources/1 = SubResource("TileSetAtlasSource_o8i5v")
+sources/3 = SubResource("TileSetAtlasSource_02bc5")
+
+[node name="StateMachineDemo" type="Node2D"]
+
+[node name="Layer0" type="TileMapLayer" parent="."]
+use_parent_material = true
+scale = Vector2(2.5, 2.5)
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAMAAAAAAAAAAAD//wQAAAAAAAAAAAAAAAQAAAAAAAAAAAD//wUAAAAAAAAAAAAAAAUAAAAAAAAAAAD//wYAAAAAAAAAAAAAAAYAAAAAAAAAAAD//wcAAAAAAAAAAAAAAAcAAAAAAAAAAAD//wgAAAAAAAAAAAAAAAgAAAAAAAAAAAD//wkAAAAAAAAAAAAAAAkAAAAAAAAAAAD//woAAAAAAAAAAAAAAAoAAAAAAAAAAAD//wsAAAAAAAAAAAAAAAsAAAAAAAAAAAABAAsAAAAAAAAAAAACAAsAAAAAAAAAAAADAAsAAAAAAAAAAAAEAAsAAAAAAAAAAAAFAAsAAAAAAAAAAAAGAAsAAAAAAAAAAAAHAAsAAAAAAAAAAAAIAAsAAAAAAAAAAAAJAAsAAAAAAAAAAAAKAAsAAAAAAAAAAAALAAsAAAAAAAAAAAD//wwAAAAAAAAAAAAAAAwAAAAAAAAAAAABAAwAAAAAAAAAAAACAAwAAAAAAAAAAAADAAwAAAAAAAAAAAAEAAwAAAAAAAAAAAAFAAwAAAAAAAAAAAAGAAwAAAAAAAAAAAAHAAwAAAAAAAAAAAAIAAwAAAAAAAAAAAAJAAwAAAAAAAAAAAAKAAwAAAAAAAAAAAALAAwAAAAAAAAAAAD//w0AAAAAAAAAAAAAAA0AAAAAAAAAAAABAA0AAAAAAAAAAAACAA0AAAAAAAAAAAADAA0AAAAAAAAAAAAEAA0AAAAAAAAAAAAFAA0AAAAAAAAAAAAGAA0AAAAAAAAAAAAHAA0AAAAAAAAAAAAIAA0AAAAAAAAAAAAJAA0AAAAAAAAAAAAKAA0AAAAAAAAAAAALAA0AAAAAAAAAAAAMAAsAAAAAAAAAAAANAAsAAAAAAAAAAAAOAAsAAAAAAAAAAAAPAAsAAAAAAAAAAAAQAAsAAAAAAAAAAAARAAsAAAAAAAAAAAASAAsAAAAAAAAAAAATAAsAAAAAAAAAAAAUAAsAAAAAAAAAAAAMAAwAAAAAAAAAAAANAAwAAAAAAAAAAAAOAAwAAAAAAAAAAAAPAAwAAAAAAAAAAAAQAAwAAAAAAAAAAAARAAwAAAAAAAAAAAASAAwAAAAAAAAAAAATAAwAAAAAAAAAAAAUAAwAAAAAAAAAAAAMAA0AAAAAAAAAAAANAA0AAAAAAAAAAAAOAA0AAAAAAAAAAAAPAA0AAAAAAAAAAAAQAA0AAAAAAAAAAAARAA0AAAAAAAAAAAASAA0AAAAAAAAAAAATAA0AAAAAAAAAAAAUAA0AAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_5uyxs")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 403.0
+offset_top = 659.0
+offset_right = 655.0
+offset_bottom = 687.0
+theme_override_fonts/font = ExtResource("3_c4mk1")
+text = "With state machine"
+
+[node name="PlayerMultipleScripts" parent="." instance=ExtResource("4_vym5w")]
+position = Vector2(448, 880)
+
+[node name="state guy" parent="." instance=ExtResource("6_bhhoj")]
+position = Vector2(651, 846)
+
+[node name="Camera2D" type="Camera2D" parent="state guy"]
+
+[node name="death_zone" parent="." instance=ExtResource("7_sq12e")]
+position = Vector2(1681, 1040)
+scale = Vector2(2.5, 2.5)
