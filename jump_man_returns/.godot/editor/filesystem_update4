@@ -1,9 +1,10 @@
 res://default_env.tres
+res://scenes/bubble_land.tscn
 res://finite_state_machine/demo_state_machine.tscn
 res://finite_state_machine/new_guy_w_state.tscn
 res://finite_state_machine/node_version/player.tscn
 res://finite_state_machine/simple_version/player_single_script.tscn
-res://finite_state_machine/simple_version/player_single_script.gd
-res://death_zone.gd
 res://death_zone.tscn
-res://finite_state_machine/node_version/state.gd
+res://door.gd
+res://scenes/door.tscn
+res://scripts/game_manager.gd
