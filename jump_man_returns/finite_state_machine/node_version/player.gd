@@ -19,4 +19,6 @@ class_name Player extends CharacterBody2D
 
 
 func _process(_delta: float) -> void:
-	label.text = fsm.state.name
+	label.text = str(GameManager.player_health)
+	if GameManager.player_health <= 0:
+		queue_free()
