@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=4 uid="uid://deieoe8sv8l1v"]
+
+[ext_resource type="Texture2D" uid="uid://dcqu25t5tp2qm" path="res://textures/bubbles.png" id="1_miwvg"]
+[ext_resource type="PackedScene" uid="uid://5rphve1exuhk" path="res://scenes/characters/new_guy_w_state.tscn" id="2_qclj7"]
+[ext_resource type="PackedScene" uid="uid://cgfoy0ejp38li" path="res://scenes/levels/bubble_land/music_controller.tscn" id="3_o4t81"]
+[ext_resource type="PackedScene" uid="uid://cyf2o538rdwcd" path="res://scenes/characters/Enemy_1.tscn" id="4_phft8"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_87bed"]
+texture = ExtResource("1_miwvg")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_8xxdp"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_87bed")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD+/wEAAQAAAAAAAAD//wEAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAEAAQAAAAAAAAACAAEAAQAAAAAAAAADAAEAAQAAAAAAAAAEAAEAAQAAAAAAAAAFAAEAAQAAAAAAAAAGAAEAAQAAAAAAAAAHAAEAAQAAAAAAAAAIAAEAAQAAAAAAAAAJAAEAAQAAAAAAAAAKAAEAAQAAAAAAAAALAAEAAQAAAAAAAAAMAAEAAQAAAAAAAAANAAEAAQAAAAAAAAAOAAEAAQAAAAAAAAAPAAEAAQAAAAAAAAAQAAEAAQAAAAAAAAARAAEAAQAAAAAAAAASAAEAAQAAAAAAAAATAAEAAQAAAAAAAAAUAAEAAQAAAAAAAAAXAP3/AQAAAAAAAAAYAP3/AQAAAAAAAAAZAP3/AQAAAAAAAAAaAP3/AQAAAAAAAAAbAP3/AQAAAAAAAAAcAP3/AQAAAAAAAAAdAP3/AQAAAAAAAAAeAP3/AQAAAAAAAAAfAP3/AQAAAAAAAAAgAP3/AQAAAAAAAAAhAP3/AQAAAAAAAAAXAPP/AQAAAAAAAAAWAPP/AQAAAAAAAAAVAPP/AQAAAAAAAAAUAPP/AQAAAAAAAAATAPP/AQAAAAAAAAASAPP/AQAAAAAAAAARAPP/AQAAAAAAAAD9//L/AQAAAAAAAAD+//L/AQAAAAAAAAD///L/AQAAAAAAAAAAAPL/AQAAAAAAAAABAPL/AQAAAAAAAAACAPL/AQAAAAAAAAADAPL/AQAAAAAAAAAEAPL/AQAAAAAAAAAFAPL/AQAAAAAAAAA=")
+tile_set = SubResource("TileSet_8xxdp")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_qclj7")]
+position = Vector2(141, -26)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="MusicController" parent="." instance=ExtResource("3_o4t81")]
+
+[node name="Enemy_1" parent="." instance=ExtResource("4_phft8")]
+position = Vector2(486, 9)

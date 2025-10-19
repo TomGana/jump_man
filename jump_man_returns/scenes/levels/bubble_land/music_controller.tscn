@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgfoy0ejp38li"]
+
+[ext_resource type="AudioStream" uid="uid://gx6v1lgtlfww" path="res://songs/bubbleland.mp3" id="1_86cwe"]
+
+[node name="MusicController" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_86cwe")
+volume_db = 6.678
+autoplay = true
+parameters/looping = true
