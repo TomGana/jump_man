@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://ciqm6oybxronj"]
+
+[ext_resource type="Texture2D" uid="uid://cip834eft6gv7" path="res://textures/sword_1.png" id="1_10c4h"]
+[ext_resource type="Script" uid="uid://bv0uvslwusyrx" path="res://scripts/sword.gd" id="1_exn1v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exn1v"]
+size = Vector2(24, 24)
+
+[sub_resource type="Animation" id="Animation_vnict"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_djx8y"]
+_data = {
+&"RESET": SubResource("Animation_vnict")
+}
+
+[sub_resource type="Animation" id="Animation_32882"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.50265485, 1.3404129, 2.178171, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j2jtd"]
+_data = {
+&"sword_strike": SubResource("Animation_32882")
+}
+
+[node name="sword" type="Node2D"]
+script = ExtResource("1_exn1v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.715, 2.715)
+texture = ExtResource("1_10c4h")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2, -3)
+shape = SubResource("RectangleShape2D_exn1v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_djx8y"),
+&"animation_library": SubResource("AnimationLibrary_j2jtd")
+}
+autoplay = "animation_library/sword_strike"

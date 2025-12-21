@@ -208,17 +208,15 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tsirk"]
-size = Vector2(24.75, 28)
+size = Vector2(16.6875, 18.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yrpbd"]
-size = Vector2(117, 100)
+size = Vector2(25, 23)
 
 [node name="Enemy_1" type="CharacterBody2D"]
 script = ExtResource("1_yrpbd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_amd68")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -252,21 +250,20 @@ theme_override_fonts/font = ExtResource("12_hynca")
 text = "State"
 
 [node name="hit_detect" type="Node2D" parent="."]
-visible = false
 script = ExtResource("13_va8sl")
 
 [node name="Area2D" type="Area2D" parent="hit_detect"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_detect/Area2D"]
-position = Vector2(0, 3)
+position = Vector2(-16, -30)
 shape = SubResource("RectangleShape2D_tsirk")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="test" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="test"]
+position = Vector2(49, -36)
 shape = SubResource("RectangleShape2D_yrpbd")
 
 [connection signal="body_entered" from="hit_detect/Area2D" to="hit_detect" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Area2D" to="StateMachine/Idle" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="StateMachine/Jumping" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="test" to="StateMachine/Idle" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="test" to="StateMachine/Jumping" method="_on_area_2d_body_exited"]

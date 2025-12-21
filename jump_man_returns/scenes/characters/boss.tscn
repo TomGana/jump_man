@@ -1,0 +1,52 @@
+[gd_scene load_steps=11 format=3 uid="uid://dn400mo3tdakn"]
+
+[ext_resource type="Script" uid="uid://bd6opwkgael32" path="res://scripts/enemy_state_machine/enemy.gd" id="1_4yo74"]
+[ext_resource type="Script" uid="uid://bnmn8isk366ov" path="res://scripts/enemy_state_machine/state_machine.gd" id="2_io0di"]
+[ext_resource type="Script" uid="uid://3l2nm2f7shq3" path="res://scripts/enemy_state_machine/states/idle.gd" id="3_od1mr"]
+[ext_resource type="Script" uid="uid://bgd2ke686n7d5" path="res://scripts/enemy_state_machine/states/running.gd" id="4_li73i"]
+[ext_resource type="Script" uid="uid://b1rh6qkouanhb" path="res://scripts/enemy_state_machine/states/jumping.gd" id="5_kx78e"]
+[ext_resource type="Script" uid="uid://dc7pa6uym05vw" path="res://scripts/enemy_state_machine/states/falling.gd" id="6_jrhtl"]
+[ext_resource type="Script" uid="uid://bl3lt3qas6to6" path="res://scripts/enemy_state_machine/states/gliding.gd" id="7_vtncg"]
+[ext_resource type="FontFile" path="res://textures/monserrate_bold.tres" id="8_mf0km"]
+[ext_resource type="Texture2D" uid="uid://cgdj82lxvixfv" path="res://textures/bubble_boss_more_evil.png" id="9_8yh6a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2rsw"]
+size = Vector2(21, 26)
+
+[node name="Node2D" type="CharacterBody2D"]
+script = ExtResource("1_4yo74")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_t2rsw")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_io0di")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("3_od1mr")
+
+[node name="Running" type="Node" parent="StateMachine"]
+script = ExtResource("4_li73i")
+
+[node name="Jumping" type="Node" parent="StateMachine"]
+script = ExtResource("5_kx78e")
+
+[node name="Falling" type="Node" parent="StateMachine"]
+script = ExtResource("6_jrhtl")
+
+[node name="Gliding" type="Node" parent="StateMachine"]
+script = ExtResource("7_vtncg")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -34.0
+offset_top = -72.0
+offset_right = 44.0
+offset_bottom = -44.0
+theme_override_fonts/font = ExtResource("8_mf0km")
+text = "State"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5, 145)
+scale = Vector2(4, 4)
+texture = ExtResource("9_8yh6a")

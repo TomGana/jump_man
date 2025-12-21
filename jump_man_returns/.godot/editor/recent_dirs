@@ -1,7 +1,8 @@
+res://scenes/characters
+res://textures
 res://scripts/enemy_state_machine
 res://
 res://scripts/enemy_state_machine/states
 res://textures/enemy1
 res://scenes
-res://textures
 res://scripts
