@@ -18,3 +18,6 @@ func physics_update(_delta: float) -> void:
 		get_parent().get_parent().queue_free()
 	elif Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
 		finished.emit(RUNNING)
+	
+		#get_parent().get_parent().get_node("sword/AnimationPlayer").prop
+		#$AnimationPlayer.current_animation = "sword_strike"

@@ -18,6 +18,8 @@ class_name Player extends CharacterBody2D
 
 @onready var fsm := $StateMachine
 @onready var label := $Label
+@onready var sword_sprite := $sword/Sprite2D
+@onready var sword := $sword
 
 
 func _process(_delta: float) -> void:

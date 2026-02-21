@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ciqm6oybxronj"]
+[gd_scene format=3 uid="uid://ciqm6oybxronj"]
 
 [ext_resource type="Texture2D" uid="uid://cip834eft6gv7" path="res://textures/sword_1.png" id="1_10c4h"]
 [ext_resource type="Script" uid="uid://bv0uvslwusyrx" path="res://scripts/sword.gd" id="1_exn1v"]
@@ -11,7 +11,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -45,22 +45,26 @@ _data = {
 &"sword_strike": SubResource("Animation_32882")
 }
 
-[node name="sword" type="Node2D"]
+[node name="sword" type="Node2D" unique_id=897267003]
+light_mask = 2
+visibility_layer = 2
 script = ExtResource("1_exn1v")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=130207331]
 scale = Vector2(2.715, 2.715)
 texture = ExtResource("1_10c4h")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1276617944]
+light_mask = 2
+visibility_layer = 2
+collision_layer = 2
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2, -3)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1859665635]
+light_mask = 2
+visibility_layer = 2
 shape = SubResource("RectangleShape2D_exn1v")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_djx8y"),
-&"animation_library": SubResource("AnimationLibrary_j2jtd")
-}
-autoplay = "animation_library/sword_strike"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1863269063]
+libraries/ = SubResource("AnimationLibrary_djx8y")
+libraries/animation_library = SubResource("AnimationLibrary_j2jtd")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cyf2o538rdwcd"]
+[gd_scene format=3 uid="uid://cyf2o538rdwcd"]
 
 [ext_resource type="Script" uid="uid://bd6opwkgael32" path="res://scripts/enemy_state_machine/enemy.gd" id="1_yrpbd"]
 [ext_resource type="Texture2D" uid="uid://doq23qj7mqsdq" path="res://textures/enemy1/Fall (32x32).png" id="2_va8sl"]
@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://bclnyx0k47ryl" path="res://scripts/hit_detect.gd" id="13_va8sl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_amd68"]
-size = Vector2(21, 26)
+size = Vector2(16.5, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pve8x"]
 atlas = ExtResource("3_tsirk")
@@ -208,40 +208,38 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tsirk"]
-size = Vector2(16.6875, 18.5)
+size = Vector2(21, 19)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yrpbd"]
-size = Vector2(25, 23)
-
-[node name="Enemy_1" type="CharacterBody2D"]
+[node name="Enemy_1" type="CharacterBody2D" unique_id=1960184359]
 script = ExtResource("1_yrpbd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=173165439]
+position = Vector2(1, 8)
 shape = SubResource("RectangleShape2D_amd68")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1574279380]
 sprite_frames = SubResource("SpriteFrames_jbeus")
 animation = &"run"
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="StateMachine" type="Node" parent="." unique_id=1187050619]
 script = ExtResource("6_yrpbd")
 
-[node name="Idle" type="Node" parent="StateMachine"]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=1507011001]
 script = ExtResource("7_yrpbd")
 
-[node name="Running" type="Node" parent="StateMachine"]
+[node name="Running" type="Node" parent="StateMachine" unique_id=1318392426]
 script = ExtResource("8_7otib")
 
-[node name="Jumping" type="Node" parent="StateMachine"]
+[node name="Jumping" type="Node" parent="StateMachine" unique_id=286847294]
 script = ExtResource("9_rs6xk")
 
-[node name="Falling" type="Node" parent="StateMachine"]
+[node name="Falling" type="Node" parent="StateMachine" unique_id=535073937]
 script = ExtResource("10_ucnup")
 
-[node name="Gliding" type="Node" parent="StateMachine"]
+[node name="Gliding" type="Node" parent="StateMachine" unique_id=1358301725]
 script = ExtResource("11_dtko1")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1289932992]
 offset_left = -34.0
 offset_top = -72.0
 offset_right = 44.0
@@ -249,21 +247,17 @@ offset_bottom = -44.0
 theme_override_fonts/font = ExtResource("12_hynca")
 text = "State"
 
-[node name="hit_detect" type="Node2D" parent="."]
+[node name="hit_detect" type="Node2D" parent="." unique_id=1503650366]
 script = ExtResource("13_va8sl")
 
-[node name="Area2D" type="Area2D" parent="hit_detect"]
+[node name="hurtbox" type="Area2D" parent="hit_detect" unique_id=737741332]
+position = Vector2(-28, -1)
+collision_layer = 2
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_detect/Area2D"]
-position = Vector2(-16, -30)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hit_detect/hurtbox" unique_id=1800775163]
+light_mask = 2
+visibility_layer = 2
 shape = SubResource("RectangleShape2D_tsirk")
 
-[node name="test" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="test"]
-position = Vector2(49, -36)
-shape = SubResource("RectangleShape2D_yrpbd")
-
-[connection signal="body_entered" from="hit_detect/Area2D" to="hit_detect" method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="test" to="StateMachine/Idle" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="test" to="StateMachine/Jumping" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="hit_detect/hurtbox" to="hit_detect" method="_on_area_2d_body_entered"]

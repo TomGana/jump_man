@@ -10,9 +10,14 @@ func physics_update(delta: float) -> void:
 	player.move_and_slide()
 	if player.velocity.x < 0:
 		player.animated_sprite.flip_h = true
+		#player.sword_sprite.flip_h = true
+		player.sword_sprite.position.x = 100
+		player.sword.scale.x = -1
 	elif player.velocity.x > 0:
 		player.animated_sprite.flip_h = false
-
+		#player.sword_sprite.flip_h = false
+		player.sword_sprite.position.x = 0
+		player.sword.scale.x = 1
 	if not player.is_on_floor():
 		finished.emit(FALLING)
 	elif Input.is_action_just_pressed("move_up"):

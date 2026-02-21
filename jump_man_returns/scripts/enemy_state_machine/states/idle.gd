@@ -9,7 +9,3 @@ func enter(previous_state_path: String, data := {}) -> void:
 func physics_update(_delta: float) -> void:
 	enemy.velocity.y += enemy.gravity * _delta
 	enemy.move_and_slide()
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	finished.emit(JUMPING)
