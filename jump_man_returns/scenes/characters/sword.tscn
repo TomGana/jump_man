@@ -46,23 +46,18 @@ _data = {
 }
 
 [node name="sword" type="Node2D" unique_id=897267003]
-light_mask = 2
-visibility_layer = 2
 script = ExtResource("1_exn1v")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=130207331]
 scale = Vector2(2.715, 2.715)
 texture = ExtResource("1_10c4h")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1276617944]
-light_mask = 2
-visibility_layer = 2
+[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=1276617944]
+scale = Vector2(0.36832416, 0.36832416)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1859665635]
-light_mask = 2
-visibility_layer = 2
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=1859665635]
 shape = SubResource("RectangleShape2D_exn1v")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1863269063]

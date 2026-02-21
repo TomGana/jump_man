@@ -246,8 +246,8 @@ theme_override_fonts/font = ExtResource("9_2e2xc")
 text = "State"
 
 [node name="sword" parent="." unique_id=726353035 instance=ExtResource("13_uejfb")]
-light_mask = 1
-visibility_layer = 1
-position = Vector2(47, -7)
+position = Vector2(54, -4)
 
 [connection signal="hit2" from="StateMachine" to="sword" method="_on_state_machine_hit_2"]
+[connection signal="anim_stopped" from="sword" to="." method="_on_sword_anim_stopped"]
+[connection signal="swing_sword" from="sword" to="." method="_on_sword_swing_sword"]

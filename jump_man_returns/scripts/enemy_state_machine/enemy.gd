@@ -18,8 +18,16 @@ class_name Enemy extends CharacterBody2D
 
 @onready var fsm := $StateMachine
 @onready var label := $Label
-
-
+signal enemy_swing_sword
+signal anim_stopped
 func _process(_delta: float) -> void:
 	
 	pass
+
+
+func _on_character_body_2d_char_swing_sword() -> void:
+	enemy_swing_sword.emit()
+
+
+func _on_character_body_2d_anim_stopped() -> void:
+	anim_stopped.emit()

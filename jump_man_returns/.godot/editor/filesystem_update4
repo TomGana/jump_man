@@ -1,5 +1,10 @@
 res://default_env.tres
 res://scenes/characters/Enemy_1.tscn
-res://scenes/characters/boss_battls.tscn
 res://scenes/characters/sword.tscn
+res://scenes/characters/boss_battls.tscn
 res://scenes/characters/new_guy_w_state.tscn
+res://scripts/hit_detect.gd
+res://scripts/player_state_machine/states/running.gd
+res://scripts/sword.gd
+res://scripts/player_state_machine/player.gd
+res://scripts/enemy_state_machine/enemy.gd

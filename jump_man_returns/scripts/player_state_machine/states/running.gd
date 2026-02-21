@@ -11,7 +11,7 @@ func physics_update(delta: float) -> void:
 	if player.velocity.x < 0:
 		player.animated_sprite.flip_h = true
 		#player.sword_sprite.flip_h = true
-		player.sword_sprite.position.x = 100
+		player.sword_sprite.position.x = 120
 		player.sword.scale.x = -1
 	elif player.velocity.x > 0:
 		player.animated_sprite.flip_h = false

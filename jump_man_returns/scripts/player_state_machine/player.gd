@@ -20,9 +20,17 @@ class_name Player extends CharacterBody2D
 @onready var label := $Label
 @onready var sword_sprite := $sword/Sprite2D
 @onready var sword := $sword
-
-
+signal char_swing_sword
+signal anim_stopped
 func _process(_delta: float) -> void:
 	label.text = str(GameManager.player_health)
 	if GameManager.player_health <= 0:
 		queue_free()
+
+
+func _on_sword_swing_sword() -> void:
+	char_swing_sword.emit()
+
+
+func _on_sword_anim_stopped() -> void:
+	anim_stopped.emit()
