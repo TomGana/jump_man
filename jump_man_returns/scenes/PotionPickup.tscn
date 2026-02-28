@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cqn5iuer20dit"]
+
+[ext_resource type="Script" uid="uid://dmmqm60oednlk" path="res://PotionPickup.gd" id="1_x565l"]
+[ext_resource type="Texture2D" uid="uid://te7lw85i0mub" path="res://textures/items/potion_of_greenness.png" id="2_gyf8w"]
+[ext_resource type="Resource" uid="uid://bk833p1a7hyy0" path="res://textures/items/potion.tres" id="2_rsutr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sa1qr"]
+size = Vector2(127, 168)
+
+[node name="Area2D" type="Area2D" unique_id=2127438570]
+script = ExtResource("1_x565l")
+item = ExtResource("2_rsutr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1679436532]
+scale = Vector2(1.875, 1.875)
+texture = ExtResource("2_gyf8w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2050674939]
+position = Vector2(-3.5, 4)
+shape = SubResource("RectangleShape2D_sa1qr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

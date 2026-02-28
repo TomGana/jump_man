@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://k1o764gyjj55"]
+
+[node name="InventorySlot" type="PanelContainer" unique_id=682411503]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1965230019]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=711594554]
+layout_mode = 2

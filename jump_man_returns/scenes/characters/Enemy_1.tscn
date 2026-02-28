@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://bclnyx0k47ryl" path="res://scripts/hit_detect.gd" id="13_va8sl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_amd68"]
-size = Vector2(16.5, 9)
+size = Vector2(39, 56)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pve8x"]
 atlas = ExtResource("3_tsirk")
@@ -208,18 +208,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tsirk"]
-size = Vector2(21, 19)
+size = Vector2(39, 56)
 
 [node name="Enemy_1" type="CharacterBody2D" unique_id=1960184359]
 script = ExtResource("1_yrpbd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=173165439]
-position = Vector2(1, 8)
+position = Vector2(1.5, 4)
 shape = SubResource("RectangleShape2D_amd68")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1574279380]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_jbeus")
-animation = &"run"
+animation = &"idle"
 
 [node name="StateMachine" type="Node" parent="." unique_id=1187050619]
 script = ExtResource("6_yrpbd")
@@ -239,11 +240,11 @@ script = ExtResource("10_ucnup")
 [node name="Gliding" type="Node" parent="StateMachine" unique_id=1358301725]
 script = ExtResource("11_dtko1")
 
-[node name="Label" type="Label" parent="." unique_id=1289932992]
-offset_left = -34.0
-offset_top = -72.0
-offset_right = 44.0
-offset_bottom = -44.0
+[node name="Label" type="Label" parent="." unique_id=1833654739]
+offset_left = -28.0
+offset_top = -58.0
+offset_right = 50.0
+offset_bottom = -30.0
 theme_override_fonts/font = ExtResource("12_hynca")
 text = "State"
 
@@ -251,13 +252,13 @@ text = "State"
 script = ExtResource("13_va8sl")
 
 [node name="hurtbox" type="Area2D" parent="hit_detect" unique_id=737741332]
-position = Vector2(-28, -1)
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit_detect/hurtbox" unique_id=1800775163]
 light_mask = 2
 visibility_layer = 2
+position = Vector2(1.5, 4)
 shape = SubResource("RectangleShape2D_tsirk")
 
 [connection signal="anim_stopped" from="." to="hit_detect" method="_on_enemy_1_anim_stopped"]

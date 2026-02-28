@@ -1,8 +1,10 @@
-res://scenes/characters
-res://textures
-res://scripts/enemy_state_machine
+res://textures/items/
+res://scenes/
+res://scenes/UI/
+res://scripts/
+res://scenes/characters/
+res://textures/
+res://scripts/enemy_state_machine/
 res://
-res://scripts/enemy_state_machine/states
-res://textures/enemy1
-res://scenes
-res://scripts
+res://scripts/enemy_state_machine/states/
+res://textures/enemy1/

@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bapdilba6s68f" path="res://textures/test_texture.png" id="2_ybq24"]
 [ext_resource type="PackedScene" uid="uid://5rphve1exuhk" path="res://scenes/characters/new_guy_w_state.tscn" id="3_ybq24"]
 [ext_resource type="PackedScene" uid="uid://cyf2o538rdwcd" path="res://scenes/characters/Enemy_1.tscn" id="4_o247d"]
+[ext_resource type="PackedScene" uid="uid://cqn5iuer20dit" path="res://scenes/PotionPickup.tscn" id="5_h7h7k"]
+[ext_resource type="PackedScene" uid="uid://cm6tmid7o1dqt" path="res://scenes/UI/InventoryUI.tscn" id="6_651ph"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_o247d"]
 tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 1, 131072, 0, 2, 1, 65536, 0, 65537, 65536, 1, 131073, 65536, 2, 2, 131072, 0, 65538, 131072, 1, 131074, 131072, 2, 3, 196608, 0, 65539, 196608, 1, 131075, 196608, 2, 4, 262144, 0, 65540, 262144, 1, 131076, 262144, 2, 5, 327680, 0, 65541, 327680, 1, 131077, 327680, 2, 6, 393216, 0, 65542, 393216, 1, 131078, 393216, 2, 7, 458752, 0, 65543, 458752, 1, 131079, 458752, 2)
@@ -188,14 +190,18 @@ tile_map_data = PackedByteArray("AAAAAPv/AAABAAIAAAAAAPz/AAAAAAEAAAAAAP3/AAAAAAA
 tile_set = SubResource("TileSet_imbv6")
 
 [node name="Enemy_1" parent="." unique_id=1960184359 instance=ExtResource("4_o247d")]
-position = Vector2(287, -132)
-scale = Vector2(1.385, 1.385)
+position = Vector2(651, -132)
 
 [node name="CharacterBody2D" parent="." unique_id=755673903 instance=ExtResource("3_ybq24")]
-position = Vector2(64, -145)
-scale = Vector2(0.72, 0.72)
+position = Vector2(52, -147)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1931856544]
+
+[node name="Area2D" parent="." unique_id=2127438570 instance=ExtResource("5_h7h7k")]
+position = Vector2(277, -142)
+scale = Vector2(0.26, 0.26)
+
+[node name="InventoryUI" parent="." unique_id=315219749 instance=ExtResource("6_651ph")]
 
 [connection signal="anim_stopped" from="CharacterBody2D" to="Enemy_1" method="_on_character_body_2d_anim_stopped"]
 [connection signal="char_swing_sword" from="CharacterBody2D" to="Enemy_1" method="_on_character_body_2d_char_swing_sword"]

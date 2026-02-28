@@ -21,6 +21,7 @@ config/icon="res://textures/icon.png"
 
 [autoload]
 
+InventoryManger="*uid://dtnvfen3vxg2u"
 GameManager="*res://scripts/game_manager.gd"
 
 [display]

@@ -16,6 +16,8 @@ func _process(delta: float) -> void:
 		get_parent().health1 -= 10
 		print(get_parent().health1)
 		hit_once_check = true
+	if get_parent().health1 == 0:
+		get_parent().queue_free()
 
 
 func _on_enemy_1_anim_stopped() -> void:

@@ -21,8 +21,7 @@ class_name Enemy extends CharacterBody2D
 signal enemy_swing_sword
 signal anim_stopped
 func _process(_delta: float) -> void:
-	
-	pass
+	label.text = str(health1)
 
 
 func _on_character_body_2d_char_swing_sword() -> void:
