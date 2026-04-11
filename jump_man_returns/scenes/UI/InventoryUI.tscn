@@ -7,19 +7,55 @@
 script = ExtResource("1_31fix")
 
 [node name="Panel" type="Panel" parent="." unique_id=540120703]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 403.0
+offset_bottom = 44.0
 
 [node name="GridContainer" type="GridContainer" parent="Panel" unique_id=1771440216]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 77.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 401.0
+offset_bottom = 42.0
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 4
+columns = 11
 
 [node name="InventorySlot" parent="Panel/GridContainer" unique_id=682411503 instance=ExtResource("2_1lpy6")]
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 
-[node name="InventorySlot2" parent="Panel/GridContainer" unique_id=1777066237 instance=ExtResource("2_1lpy6")]
+[node name="InventorySlot2" parent="Panel/GridContainer" unique_id=2034674733 instance=ExtResource("2_1lpy6")]
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2
 
-[node name="InventorySlot3" parent="Panel/GridContainer" unique_id=972418564 instance=ExtResource("2_1lpy6")]
+[node name="InventorySlot3" parent="Panel/GridContainer" unique_id=1201072934 instance=ExtResource("2_1lpy6")]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+
+[node name="InventorySlot4" parent="Panel/GridContainer" unique_id=1256528152 instance=ExtResource("2_1lpy6")]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+
+[node name="InventorySlot5" parent="Panel/GridContainer" unique_id=1937157694 instance=ExtResource("2_1lpy6")]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+
+[node name="InventorySlot6" parent="Panel/GridContainer" unique_id=756910086 instance=ExtResource("2_1lpy6")]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+
+[node name="InventorySlot7" parent="Panel/GridContainer" unique_id=1170994140 instance=ExtResource("2_1lpy6")]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+
+[node name="InventorySlot8" parent="Panel/GridContainer" unique_id=19447601 instance=ExtResource("2_1lpy6")]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+
+[node name="InventorySlot9" parent="Panel/GridContainer" unique_id=2047251749 instance=ExtResource("2_1lpy6")]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+
+[node name="InventorySlot10" parent="Panel/GridContainer" unique_id=1334339393 instance=ExtResource("2_1lpy6")]
+custom_minimum_size = Vector2(36, 36)
 layout_mode = 2

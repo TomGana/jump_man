@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bk833p1a7hyy0"]
 
 [ext_resource type="Script" uid="uid://bb63o2nq65uou" path="res://scripts/ItemData.gd" id="1_07wnu"]
-[ext_resource type="Texture2D" uid="uid://te7lw85i0mub" path="res://textures/items/potion_of_greenness.png" id="2_d10qw"]
+[ext_resource type="Texture2D" uid="uid://dieof0u5minxq" path="res://textures/items/potion_of_greenness.png" id="2_d10qw"]
 
 [resource]
 script = ExtResource("1_07wnu")

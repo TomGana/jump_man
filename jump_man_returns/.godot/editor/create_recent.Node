@@ -1,3 +1,4 @@
+TextureRect
 CollisionShape2D
 Sprite2D
 Area2D
@@ -6,7 +7,6 @@ Panel
 CanvasLayer
 PanelContainer
 Label
-TextureRect
 Camera2D
 TileMapLayer
 CharacterBody2D

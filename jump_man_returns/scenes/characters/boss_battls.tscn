@@ -197,11 +197,23 @@ position = Vector2(52, -147)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1931856544]
 
-[node name="Area2D" parent="." unique_id=2127438570 instance=ExtResource("5_h7h7k")]
+[node name="Potion" parent="." unique_id=2127438570 instance=ExtResource("5_h7h7k")]
 position = Vector2(277, -142)
-scale = Vector2(0.26, 0.26)
+scale = Vector2(0.73, 0.73)
 
 [node name="InventoryUI" parent="." unique_id=315219749 instance=ExtResource("6_651ph")]
+
+[node name="Potion2" parent="." unique_id=788444070 instance=ExtResource("5_h7h7k")]
+position = Vector2(325.00003, -143.00002)
+scale = Vector2(0.73, 0.73)
+
+[node name="Potion3" parent="." unique_id=535224498 instance=ExtResource("5_h7h7k")]
+position = Vector2(358, -142)
+scale = Vector2(0.73, 0.73)
+
+[node name="Potion4" parent="." unique_id=771323294 instance=ExtResource("5_h7h7k")]
+position = Vector2(393, -144)
+scale = Vector2(0.73, 0.73)
 
 [connection signal="anim_stopped" from="CharacterBody2D" to="Enemy_1" method="_on_character_body_2d_anim_stopped"]
 [connection signal="char_swing_sword" from="CharacterBody2D" to="Enemy_1" method="_on_character_body_2d_char_swing_sword"]

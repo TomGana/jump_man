@@ -1,8 +1,5 @@
 res://default_env.tres
 res://scenes/UI/InventoryUI.tscn
-res://PotionPickup.gd
-res://scripts/InventoryUI.gd
-res://scenes/PotionPickup.tscn
 res://scenes/characters/boss_battls.tscn
-res://scenes/characters/new_guy_w_state.tscn
+res://scenes/PotionPickup.tscn
 res://textures/items/potion.tres
