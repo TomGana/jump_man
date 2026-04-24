@@ -5,6 +5,7 @@ class_name PlayerStateMachine extends Node
 ## Emitted right after a state transition.
 signal state_changed()
 signal hit2
+
 ## The initial state of the state machine. If not set, the first child node is used.
 
 @export var initial_state: PlayerStateTemplate = null
@@ -34,6 +35,7 @@ func _process(delta: float) -> void:
 	state.update(delta)
 	if Input.is_action_just_pressed("hit"):
 		hit2.emit()
+
 
 
 func _physics_process(delta: float) -> void:

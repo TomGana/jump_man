@@ -24,3 +24,11 @@ func update_ui():
 		else:
 			# Otherwise, clear the slot.
 			slot.get_node("TextureRect").texture = null
+
+
+func _on_character_body_2d_drop_item() -> void:
+	var item = InventoryManger.items[0]
+	InventoryManger.remove_item(item)
+	print("removed")
+	print(item)
+	

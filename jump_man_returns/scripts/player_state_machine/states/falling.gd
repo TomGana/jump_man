@@ -10,10 +10,12 @@ func physics_update(delta: float) -> void:
 	player.velocity.y += player.gravity * delta
 	player.move_and_slide()
 	if player.velocity.x < 0:
+		GameManager.direction = -1
 		player.animated_sprite.flip_h = true
 		player.sword_sprite.position.x = 120
 		player.sword.scale.x = -1
 	elif player.velocity.x > 0:
+		GameManager.direction = 1
 		player.animated_sprite.flip_h = false
 		player.sword_sprite.position.x = 0
 		player.sword.scale.x = 1

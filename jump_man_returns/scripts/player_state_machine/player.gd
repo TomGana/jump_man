@@ -22,10 +22,19 @@ class_name Player extends CharacterBody2D
 @onready var sword := $sword
 signal char_swing_sword
 signal anim_stopped
+signal drop_item
 func _process(_delta: float) -> void:
 	label.text = str(GameManager.player_health)
 	if GameManager.player_health <= 0:
 		queue_free()
+	if Input.is_action_just_pressed("drop_item"):
+		drop_item.emit()
+		var scene = load("res://scenes/PotionPickup.tscn")
+		var instance = scene.instantiate()
+		print(GameManager.direction)
+		instance.position = position + Vector2(GameManager.direction*50,0)
+		instance.scale = Vector2(.73,.73)
+		get_parent().add_child(instance)
 
 
 func _on_sword_swing_sword() -> void:

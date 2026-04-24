@@ -1,5 +1,12 @@
 res://default_env.tres
-res://scenes/UI/InventoryUI.tscn
+res://scenes/characters/new_guy_w_state.tscn
+res://scripts/player_state_machine/player_state_machine.gd
+res://scripts/player_state_machine/player.gd
+res://scripts/InventoryUI.gd
 res://scenes/characters/boss_battls.tscn
-res://scenes/PotionPickup.tscn
-res://textures/items/potion.tres
+res://scenes/UI/InventoryUI.tscn
+res://scripts/game_manager.gd
+res://scripts/player_state_machine/states/running.gd
+res://scripts/player_state_machine/states/jumping.gd
+res://scripts/player_state_machine/states/falling.gd
+res://scripts/player_state_machine/states/gliding.gd

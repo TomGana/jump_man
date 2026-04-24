@@ -12,8 +12,10 @@ func physics_update(delta: float) -> void:
 	player.velocity.y += player.glide_gravity * delta
 	player.move_and_slide()
 	if player.velocity.x < 0:
+		GameManager.direction = -1
 		player.animated_sprite.flip_h = true
 	elif player.velocity.x > 0:
+		GameManager.direction = 1
 		player.animated_sprite.flip_h = false
 
 	if Input.is_action_just_pressed("move_up"):
